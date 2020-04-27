@@ -2,7 +2,8 @@ import React from "react";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import catAndHumanIllustration from "../images/cat-and-human-illustration.svg";
+import Typewriter from 'typewriter-effect';
+
 
 function IndexPage() {
   return (
@@ -12,29 +13,24 @@ function IndexPage() {
         title="Home"
       />
 
-      <section className="text-center">
-        <img
-          alt="Cat and human sitting on a couch"
-          className="block w-1/2 mx-auto mb-8"
-          src={catAndHumanIllustration}
-        />
+      <section className="text-left">
 
-        <h2 className="inline-block p-3 mb-4 text-2xl font-bold bg-yellow-400">
-          Hey there! Welcome to your first Gatsby site.
-        </h2>
+        <h1 className="title-font font-bold sm:text-6xl text-xl">
+          Hi, I am Chi.
+        </h1>
 
-        <p className="leading-loose">
-          This is a barebones starter for Gatsby styled using{` `}
-          <a
-            className="font-bold text-gray-900 no-underline"
-            href="https://tailwindcss.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Tailwind CSS
-          </a>
-          , a utility-first CSS framework.
-        </p>
+        <div className="text-xl sm:text-6xl font-semibold flex "> 
+      <h1 className="pr-2 sm:pr-4">I am a</h1>
+      <div className="text-orange-400">
+      <Typewriter
+  options={{
+    strings: ['product designer', 'front-end developer'],
+    autoStart: true,
+    loop: true,
+  }}
+/>
+</div>
+</div>
       </section>
     </Layout>
   );
