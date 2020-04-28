@@ -8,15 +8,15 @@ function Layout({ children }) {
     <div className="flex flex-col min-h-screen body">
       <Header />
 
-      <main className="flex-1 w-full max-w-6xl px-4 py-8 mx-auto md:px-8 md:py-16">
+      <main className="flex-1 w-full max-w-4xl px-4 py-4 mx-auto md:px-8 md:py-16">
         {children}
       </main>
       
       <footer className="text-gray-700 font-body">
-            <div className="max-w-6xl mx-auto py-8 sm:py-8 px-4 flex items-center sm:flex-row flex-col">
-                <p className="text-sm text-gray-500 sm:py-2 sm:mt-0 mt-4">© 2020 - by Chi Le
+            <div className="max-w-4xl mx-auto py-4 px-4 flex items-center sm:flex-row flex-col-reverse">
+                <p className="text-sm mt-4 text-gray-500 sm:py-2 sm:mt-0">© 2020 - by Chi Le
                 </p>
-                <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+                <span className="inline-flex sm:ml-auto sm:mt-0 justify-center sm:justify-start">
                 <a href="https://www.facebook.com/chile206" className="text-gray-500 hover:text-orange-400">
                     <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className="w-5 h-5" viewBox="0 0 24 24">
                     <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
