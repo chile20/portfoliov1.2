@@ -5,13 +5,13 @@ import Header from "./header";
 
 function Layout({ children }) {
   return (
-    <div className="flex flex-col min-h-screen font-sans text-gray-900 bg-gray-200 ">
+    <div className="flex flex-col min-h-screen body">
       <Header />
 
       <main className="flex-1 w-full max-w-6xl px-4 py-8 mx-auto md:px-8 md:py-16">
         {children}
       </main>
-
+      
       <footer className="text-gray-700 font-body">
             <div className="max-w-6xl mx-auto py-8 sm:py-8 px-4 flex items-center sm:flex-row flex-col">
                 <p className="text-sm text-gray-500 sm:py-2 sm:mt-0 mt-4">© 2020 - by Chi Le
