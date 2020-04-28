@@ -17,9 +17,11 @@
     "react-dom": "16.13.1",
     "react-helmet": "6.0.0",
     "react-helmet-async": "^1.0.5",
+    "react-toggle": "^4.1.1",
     "react-typography": "^0.16.19",
     "typewriter-effect": "^2.13.0",
-    "typography": "^0.16.19"
+    "typography": "^0.16.19",
+    "use-dark-mode": "^2.3.1"
   },
   "keywords": [
     "gatsby",
