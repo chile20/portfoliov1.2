@@ -3,6 +3,7 @@ const tailwindConfig = require("./tailwind.config.js");
 
 const fullConfig = resolveConfig(tailwindConfig);
 
+
 module.exports = {
   siteMetadata: {
     title: `Chi Le`,
@@ -15,12 +16,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-tailwind`,
-        short_name: `starter`,
+        name: `gatsby-portfolio`,
+        short_name: `portfolio`,
         start_url: `/`,
-        background_color: fullConfig.theme.colors.white,
-        theme_color: fullConfig.theme.colors.teal["400"],
-        display: `minimal-ui`,
+        background_color: "#6b37bf",
+        theme_color: "#6b37bf",
+        theme_color_in_head: false, // This will avoid adding theme-color meta tag.
+        display: `standalone`,
       },
     },
     {
@@ -40,6 +42,12 @@ module.exports = {
       options: {
         tailwind: true,
         purgeOnly: [`src/css/style.css`],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
       },
     },
     `gatsby-plugin-offline`,
