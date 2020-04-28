@@ -23,6 +23,7 @@ module.exports = {
         theme_color: "#6b37bf",
         theme_color_in_head: false, // This will avoid adding theme-color meta tag.
         display: `standalone`,
+        icon: `src/static/images/favicon.png`,
       },
     },
     {
