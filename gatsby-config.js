@@ -7,8 +7,8 @@ const fullConfig = resolveConfig(tailwindConfig);
 module.exports = {
   siteMetadata: {
     title: `Chi Le`,
-    description: `Gatsby starter styled with Tailwind`,
-    author: `@taylorbryant`,
+    description: `Personal Portfolio by CL`,
+    author: `@chile`,
   },
   plugins: [
     `gatsby-plugin-eslint`,
@@ -23,8 +23,6 @@ module.exports = {
         theme_color: "#6b37bf",
         theme_color_in_head: false, // This will avoid adding theme-color meta tag.
         display: `standalone`,
-        icon: `src/static/images/favicon.png`,
-      },
     },
     {
       resolve: `gatsby-plugin-postcss`,
