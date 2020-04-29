@@ -3,8 +3,11 @@ import React from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Typewriter from "typewriter-effect";
+import { graphql, StaticQuery } from "gatsby";
 
+import Post from "../components/Post";
 import Resume from "../static/chile-resume.pdf";
+import { ArrowRight } from "react-feather";
 
 function IndexPage() {
   return (
@@ -13,7 +16,6 @@ function IndexPage() {
         keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
         title="Home"
       />
-
       <section className="max-w-4xl">
         <div className="text-left w-full self-center">
           <h1 className="title-font font-semibold sm:text-4xl text-xl">
@@ -24,7 +26,11 @@ function IndexPage() {
             <div className="font-bold text-orange-400 pt-1">
               <Typewriter
                 options={{
-                  strings: ["product designer", "front-end developer"],
+                  strings: [
+                    "Product Designer",
+                    "UI - UX Designer",
+                    "Front-end Developer",
+                  ],
                   autoStart: true,
                   loop: true,
                 }}
@@ -39,26 +45,49 @@ function IndexPage() {
             >
               DOWNLOAD CV
             </a>
-
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLineCap="round"
-              strokeLineJoin="round"
-            >
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <ArrowRight />
           </button>
+      <StaticQuery
+        query={indexQuery}
+        render={data => {
+          return (
+            <div>
+              {data.allMarkdownRemark.edges.map(({ node }) => {
+                <Post
+                  title={node.frontmatter.title}
+                  author={node.frontmatter.author}
+                  path={node.frontmatter.path}
+                  date={node.frontmatter.date}
+                  body={node.excerpt}
+                />
+              })}
+            </div>
+          );
+        }}
+      />
         </div>
       </section>
     </Layout>
   );
 }
+
+const indexQuery = graphql`
+  query {
+    allMarkdownRemark {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            date
+            author
+            path
+          }
+          excerpt
+        }
+      }
+    }
+  }
+`;
 
 export default IndexPage;
