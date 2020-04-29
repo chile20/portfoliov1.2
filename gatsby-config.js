@@ -13,16 +13,35 @@ module.exports = {
   plugins: [
     `gatsby-plugin-eslint`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-portfolio`,
         short_name: `portfolio`,
         start_url: `/`,
-        background_color: "#6b37bf",
-        theme_color: "#6b37bf",
-        theme_color_in_head: false, // This will avoid adding theme-color meta tag.
-        display: `standalone`,
+        background_color: fullConfig.theme.colors.white,
+        theme_color: fullConfig.theme.colors.teal["400"],
+        display: `minimal-ui`,
+        icon: `src/images/tailwind-icon.png`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        // CommonMark mode (default: true)
+        commonmark: true,
+        // Footnotes mode (default: true)
+        footnotes: true,
+        // Pedantic mode (default: true)
+        pedantic: true,
+        // GitHub Flavored Markdown mode (default: true)
+        gfm: true,
+        // Calculate timeToRead in minutes using word count, sanitized html, and raw Markdown content. (default: wordCount / 265)
+        timeToRead: (wordCount, html, rawMD) => wordCount / 42,
+        // Plugins configs
+        plugins: [],
       },
     },
     {
@@ -37,6 +56,14 @@ module.exports = {
         ],
       },
     },
+   {
+      resolve: 'gatsby-plugin-offline',
+      options: {
+         workboxConfig: {
+            globPatterns: ['**/*']
+         }
+      }
+   },
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {

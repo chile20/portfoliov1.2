@@ -2,25 +2,49 @@
   // https://eslint.org/docs/user-guide/configuring#specifying-environments
   "env": {
     "browser": true,
-    "node": true
+    "node": true,
+    "jest": true,
+    "es6": true
   },
   // https://github.com/babel/babel-eslint
   "parser": "babel-eslint",
   "rules": {
-    // https://eslint.org/docs/2.0.0/rules/strict
-    "strict": 0
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "trailingComma": "all",
+        "bracketSpacing": false,
+        "printWidth": 120,
+        "tabWidth": 2,
+        "semi": false
+      }
+    ],
+    "react/prop-types": [
+      "error",
+      {
+        "skipUndeclared": true
+      }
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   },
   "settings": {
     "react": {
-       "version": "detect"
-     }
+      "version": "detect"
+    }
   },
+
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+
   "extends": [
-    // https://eslint.org/docs/rules/
     "eslint:recommended",
-    // https://github.com/yannickcr/eslint-plugin-react#recommended
-    "plugin:react/recommended",
-    // https://github.com/benmosher/eslint-plugin-import
-    "plugin:import/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended",
+    "plugin:react/recommended"
   ]
 }
