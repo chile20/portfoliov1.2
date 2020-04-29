@@ -1,3 +1,5 @@
+/*Dark mode*/
+
 body.light-mode {
   background-color: #fff;
   color: #1A202C;
@@ -7,6 +9,8 @@ body.dark-mode {
   background-color: #1A202C;
   color: #fff;
 }
+
+/* Toggle */
 
 .react-toggle {
   touch-action: pan-x;
@@ -52,14 +56,14 @@ body.dark-mode {
   height: 24px;
   padding: 0;
   border-radius: 30px;
-  background-color: #4D4D4D;
+  background-color: #cbd5e0;
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
 
 .react-toggle:hover:not(.react-toggle--disabled) .react-toggle-track {
-  background-color: #000000;
+  background-color: #a0aec0;
 }
 
 .react-toggle--checked .react-toggle-track {
@@ -67,7 +71,7 @@ body.dark-mode {
 }
 
 .react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track {
-  background-color: #ffad48;
+  background-color: #ed8936;
 }
 
 .react-toggle-track-check {
@@ -121,7 +125,7 @@ body.dark-mode {
   left: 1px;
   width: 22px;
   height: 22px;
-  border: 1px solid #4D4D4D;
+  border: 1px solid #cbd5e0;
   border-radius: 50%;
   background-color: #FAFAFA;
 
