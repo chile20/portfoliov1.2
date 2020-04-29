@@ -15,6 +15,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -25,23 +26,6 @@ module.exports = {
         theme_color: fullConfig.theme.colors.teal["400"],
         display: `minimal-ui`,
         icon: `src/images/tailwind-icon.png`,
-      },
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        // CommonMark mode (default: true)
-        commonmark: true,
-        // Footnotes mode (default: true)
-        footnotes: true,
-        // Pedantic mode (default: true)
-        pedantic: true,
-        // GitHub Flavored Markdown mode (default: true)
-        gfm: true,
-        // Calculate timeToRead in minutes using word count, sanitized html, and raw Markdown content. (default: wordCount / 265)
-        timeToRead: (wordCount, html, rawMD) => wordCount / 42,
-        // Plugins configs
-        plugins: [],
       },
     },
     {
@@ -59,8 +43,9 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-          name: `images`,
-          path: `${__dirname}/src/pages/`      },
+        path: `${__dirname}/src/pages`,
+        name: 'markdown-pages',
+      },
     },
    {
       resolve: 'gatsby-plugin-offline',

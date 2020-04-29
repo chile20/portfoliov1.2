@@ -3,9 +3,8 @@ import React from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Typewriter from "typewriter-effect";
-import { graphql, StaticQuery } from "gatsby";
+import { graphql } from "gatsby";
 
-import Post from "../components/Post";
 import Resume from "../static/chile-resume.pdf";
 import { ArrowRight } from "react-feather";
 
@@ -47,24 +46,6 @@ function IndexPage() {
             </a>
             <ArrowRight />
           </button>
-      <StaticQuery
-        query={indexQuery}
-        render={data => {
-          return (
-            <div>
-              {data.allMarkdownRemark.edges.map(({ node }) => {
-                <Post
-                  title={node.frontmatter.title}
-                  author={node.frontmatter.author}
-                  path={node.frontmatter.path}
-                  date={node.frontmatter.date}
-                  body={node.excerpt}
-                />
-              })}
-            </div>
-          );
-        }}
-      />
         </div>
       </section>
     </Layout>
