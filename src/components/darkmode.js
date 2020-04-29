@@ -6,7 +6,8 @@ import "../css/custom.css";
 import { Sun, Moon} from 'react-feather'
 
 const DarkModeToggle = () => {
-  const darkMode = useDarkMode(false);
+  const darkMode = useDarkMode(true);
+  
 
   return (
     <div className="flex">
