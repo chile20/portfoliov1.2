@@ -3,10 +3,16 @@ import IconFacebook from "./icons/facebook";
 import IconInstagram from "./icons/instagram";
 import IconTwitter from "./icons/twitter";
 import IconGithub from "./icons/github";
+import styled from 'styled-components'
+import tw from 'tailwind.macro'
+
+const StyledContainer = styled('footer')`
+  ${tw`text-gray-700 font-body`}
+`
 
 function Footer() {
   return (
-    <footer className="text-gray-700 font-body">
+    <footer className="">
       <div className="max-w-4xl mx-auto py-4 px-4 flex items-center sm:flex-row flex-col-reverse">
         <p className="text-sm mt-4 text-gray-500 sm:py-2 sm:mt-0">
           © 2020 - by Chi Le

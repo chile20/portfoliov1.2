@@ -2,6 +2,12 @@ import React from "react";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import styled from 'styled-components'
+import tw from 'tailwind.macro'
+
+const Button = styled('button')`
+  ${tw`p-3`};
+`
 
 function AboutPage() {
   return (
@@ -10,7 +16,6 @@ function AboutPage() {
         keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
         title="About"
       />
-
       <section className="flex flex-col items-center md:flex-row">
         <div className="md:w-2/3 md:mr-8">
           <blockquote className="pl-4 font-serif leading-loose text-justify border-l-4 border-gray-900">
@@ -24,8 +29,8 @@ function AboutPage() {
           <cite className="block mt-4 text-xs font-bold text-right uppercase">
             – Thomas Nagel
           </cite>
+<Button>Gikko</Button>
         </div>
-
       </section>
     </Layout>
   );

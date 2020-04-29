@@ -1,5 +1,5 @@
 const resolveConfig = require("tailwindcss/resolveConfig");
-const tailwindConfig = require("./tailwind.config.js");
+const tailwindConfig = require("./tailwind.js");
 
 const fullConfig = resolveConfig(tailwindConfig);
 
@@ -16,6 +16,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-remark`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

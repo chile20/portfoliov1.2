@@ -5,6 +5,8 @@ import SEO from "../components/seo";
 import Typewriter from "typewriter-effect";
 import { graphql } from "gatsby";
 
+
+
 import Resume from "../static/chile-resume.pdf";
 import { ArrowRight } from "react-feather";
 

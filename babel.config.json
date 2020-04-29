@@ -1,0 +1,14 @@
+{
+    "plugins": [
+      [
+        "tailwind-components", {
+          "config": "./tailwind.js",
+          "format": "auto"
+        }
+      ],
+      "@babel/plugin-syntax-object-rest-spread",
+      "macros"
+    ],
+    "presets": ["babel-preset-gatsby"]
+  }
+  
