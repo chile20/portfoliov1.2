@@ -3,48 +3,48 @@ import IconFacebook from "./icons/facebook";
 import IconInstagram from "./icons/instagram";
 import IconTwitter from "./icons/twitter";
 import IconGithub from "./icons/github";
-import styled from 'styled-components'
-import tw from 'tailwind.macro'
 
-const StyledContainer = styled('footer')`
-  ${tw`text-gray-700 font-body`}
-`
+const StyledFooter = (props) =>
+<footer {...props} className="text-gray-500 font-body" />
+
+const StyledContainer = (props) =>
+<div {...props} className="text-gray-500 font-body max-w-4xl mx-auto py-4 px-4 flex items-center sm:flex-row flex-col-reverse" />
+
+const StyledCopyright = (props) =>
+<div {...props} className="text-sm mt-4 text-gray-500 sm:py-2 sm:mt-0" />
+
+const StyledSocial = (props) =>
+<div {...props} className="inline-flex sm:ml-auto sm:mt-0 justify-center sm:justify-sta" />
+
+const StyledSocialLink = (props) =>
+<a {...props} className="text-gray-500 hover:text-orange-400 p-8 md:p-4" />
+
+
 
 function Footer() {
   return (
-    <footer className="">
-      <div className="max-w-4xl mx-auto py-4 px-4 flex items-center sm:flex-row flex-col-reverse">
-        <p className="text-sm mt-4 text-gray-500 sm:py-2 sm:mt-0">
-          © 2020 - by Chi Le
-        </p>
-        <span className="inline-flex sm:ml-auto sm:mt-0 justify-center sm:justify-start">
-          <a
-            href="https://www.facebook.com/chile206"
-            className="text-gray-500 hover:text-orange-400"
-          >
-            <IconFacebook />
-          </a>
-          <a
-            href="https://twitter.com/chile206"
-            className="ml-3 text-gray-500 hover:text-orange-400"
-          >
-            <IconTwitter />
-          </a>
-          <a
-            href="https://www.instagram.com/chile.206/"
-            className="ml-3 text-gray-500 hover:text-orange-400"
-          >
-            <IconInstagram />
-          </a>
-          <a
-            href="https://github.com/chile20"
-            className="ml-3 text-gray-500 hover:text-orange-400"
-          >
-            <IconGithub />
-          </a>
-        </span>
-      </div>
-    </footer>
+    <StyledFooter>
+    <StyledContainer>
+        <StyledCopyright>
+        © 2020 - by Chi Le
+        </StyledCopyright>
+      <StyledSocial>
+        <StyledSocialLink href="/">
+          <IconFacebook />
+        </StyledSocialLink>
+        <StyledSocialLink href="/">
+          <IconTwitter />
+        </StyledSocialLink>
+        <StyledSocialLink href="/">
+          <IconInstagram />
+        </StyledSocialLink>
+        <StyledSocialLink href="/">
+          <IconGithub />
+        </StyledSocialLink>
+      </StyledSocial>
+
+    </StyledContainer>
+    </StyledFooter>
   );
 }
 

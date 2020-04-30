@@ -4,11 +4,14 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Typewriter from "typewriter-effect";
 import { graphql } from "gatsby";
-
-
+import styled from 'styled-components'
+import tw from 'tailwind.macro'
 
 import Resume from "../static/chile-resume.pdf";
 import { ArrowRight } from "react-feather";
+
+const Button = (props) =>
+<button {...props} className="flex focus:outline-none md:hover:text-orange-400 my-4 py-2" />
 
 function IndexPage() {
   return (
@@ -38,8 +41,8 @@ function IndexPage() {
               />
             </div>
           </div>
-          <button className="flex focus:outline-none md:hover:text-orange-400 my-4 py-2 rounded">
-            <a
+          <Button>
+          <a
               className="focus:outline-none font-semibold pr-2"
               href={Resume}
               download
@@ -47,7 +50,7 @@ function IndexPage() {
               DOWNLOAD CV
             </a>
             <ArrowRight />
-          </button>
+            </Button>    
         </div>
       </section>
     </Layout>
