@@ -23,6 +23,8 @@ module.exports = {
         name: `gatsby-portfolio`,
         short_name: `portfolio`,
         start_url: `/`,
+        background_color: fullConfig.theme.colors.white,
+        theme_color: fullConfig.theme.colors.teal["400"],
         display: `minimal-ui`,
         icon: `src/images/tailwind-icon.png`,
       },

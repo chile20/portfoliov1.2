@@ -6,7 +6,7 @@ import "../css/custom.css";
 import { Sun, Moon} from 'react-feather'
 
 const DarkModeToggle = () => {
-const darkMode = useDarkMode(true);
+  const darkMode = useDarkMode(true);
   
 
   return (
