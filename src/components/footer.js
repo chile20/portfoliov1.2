@@ -3,48 +3,54 @@ import IconFacebook from "./icons/facebook";
 import IconInstagram from "./icons/instagram";
 import IconTwitter from "./icons/twitter";
 import IconGithub from "./icons/github";
-import styled from 'styled-components'
-import tw from 'tailwind.macro'
 
-const StyledContainer = styled('footer')`
-  ${tw`text-gray-700 font-body`}
-`
+const StyledFooter = (props) => (
+  <footer {...props} className="text-gray-500" />
+);
+
+const Container = (props) => (
+  <div
+    {...props}
+    className="text-gray-500 font-body max-w-4xl mx-auto py-4 px-4 flex items-center sm:flex-row flex-col-reverse"
+  />
+);
+
+const Copyright = (props) => (
+  <div {...props} className="text-sm mt-4 text-gray-500 sm:py-2 sm:mt-0" />
+);
+
+const Social = (props) => (
+  <div
+    {...props}
+    className="inline-flex sm:ml-auto sm:mt-0 justify-center sm:justify-sta"
+  />
+);
+
+const SocialLink = (props) => (
+  <a {...props} className="text-gray-500 hover:text-orange-400 p-8 md:p-4" />
+);
 
 function Footer() {
   return (
-    <footer className="">
-      <div className="max-w-4xl mx-auto py-4 px-4 flex items-center sm:flex-row flex-col-reverse">
-        <p className="text-sm mt-4 text-gray-500 sm:py-2 sm:mt-0">
-          © 2020 - by Chi Le
-        </p>
-        <span className="inline-flex sm:ml-auto sm:mt-0 justify-center sm:justify-start">
-          <a
-            href="https://www.facebook.com/chile206"
-            className="text-gray-500 hover:text-orange-400"
-          >
+    <StyledFooter>
+      <Container>
+        <Copyright>© 2020 - by Chi Le</Copyright>
+        <Social>
+          <SocialLink href="/">
             <IconFacebook />
-          </a>
-          <a
-            href="https://twitter.com/chile206"
-            className="ml-3 text-gray-500 hover:text-orange-400"
-          >
+          </SocialLink>
+          <SocialLink href="/">
             <IconTwitter />
-          </a>
-          <a
-            href="https://www.instagram.com/chile.206/"
-            className="ml-3 text-gray-500 hover:text-orange-400"
-          >
+          </SocialLink>
+          <SocialLink href="/">
             <IconInstagram />
-          </a>
-          <a
-            href="https://github.com/chile20"
-            className="ml-3 text-gray-500 hover:text-orange-400"
-          >
+          </SocialLink>
+          <SocialLink href="/">
             <IconGithub />
-          </a>
-        </span>
-      </div>
-    </footer>
+          </SocialLink>
+        </Social>
+      </Container>
+    </StyledFooter>
   );
 }
 
