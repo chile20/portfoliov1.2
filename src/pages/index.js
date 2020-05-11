@@ -6,9 +6,37 @@ import Typewriter from "typewriter-effect";
 import { graphql } from "gatsby";
 
 
-
 import Resume from "../static/chile-resume.pdf";
-import { ArrowRight } from "react-feather";
+import IconRightArrow from "../components/icons/rightArrow";
+
+const Section = (props) => <div {...props} className="max-w-4xl p-4 mx-auto font-body" />;
+
+const Container = (props) => (
+  <div {...props} className="w-full py-16 md:py-24 font-normal" />
+);
+
+const Wrapper = (props) => (
+  <div {...props} className="title-font py-8 sm:text-4xl text-2xl md:flex flex-row text-center md:text-left" />
+);
+
+const Intro = (props) => (
+  <div {...props} className="pr-2 sm:pr-3 " />
+);
+
+const Span = (props) => <div {...props} className="" />;
+
+const Button = (props) => (
+  <div
+    {...props}
+    className="flex focus:outline-none text-orange-400 my-4 py-2 justify-center md:justify-start content-center"
+  />
+);
+const Link = (props) => (
+  <a
+    {...props}
+    className="focus:outline-none pr-2"
+  />
+);
 
 function IndexPage() {
   return (
@@ -17,14 +45,11 @@ function IndexPage() {
         keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
         title="Home"
       />
-      <section className="max-w-4xl">
-        <div className="text-left w-full self-center">
-          <h1 className="title-font font-semibold sm:text-4xl text-xl">
-            Hi, I am Chi
-          </h1>
-          <div className="text-xl sm:text-4xl font-semibold flex ">
-            <h1 className="pr-2 sm:pr-3 content-center pt-2 sm:py-3">I am a</h1>
-            <div className="font-bold text-orange-400 pt-1">
+      <Section>
+        <Container>
+          <Wrapper>
+            <Intro>Chi Le is an aspiring</Intro>
+            <Span>
               <Typewriter
                 options={{
                   strings: [
@@ -36,20 +61,16 @@ function IndexPage() {
                   loop: true,
                 }}
               />
-            </div>
-          </div>
-          <button className="flex focus:outline-none md:hover:text-orange-400 my-4 py-2 rounded">
-            <a
-              className="focus:outline-none font-semibold pr-2"
-              href={Resume}
-              download
-            >
+            </Span>
+          </Wrapper>
+          <Button>
+            <Link href={Resume} download>
               DOWNLOAD CV
-            </a>
-            <ArrowRight />
-          </button>
-        </div>
-      </section>
+          </Link>
+            <IconRightArrow />
+          </Button>
+        </Container>
+      </Section>
     </Layout>
   );
 }
