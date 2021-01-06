@@ -11,7 +11,7 @@ const StyledFooter = (props) => (
 const Container = (props) => (
   <div
     {...props}
-    className="text-gray-500 font-body max-w-4xl mx-auto py-4 px-4 flex items-center sm:flex-row flex-col-reverse"
+    className="text-gray-500 font-body max-w-4xl mx-auto p-4 sm:px-8 flex items-center sm:flex-row flex-col-reverse"
   />
 );
 

@@ -5,6 +5,10 @@ html {
   font-size: 18px;
 }
 
+.vertical-rl { writing-mode: vertical-lr;transform: rotate(-180deg); }
+.sm\:vertical-rl {
+  writing-mode: vertical-lr;transform: rotate(-180deg);
+}
 /*Dark mode*/
 
 body.light-mode {

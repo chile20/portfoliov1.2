@@ -9,7 +9,7 @@ function Header() {
 const Container = (props) => (
   <div
     {...props}
-    className="flex flex-wrap items-center justify-between max-w-4xl px-4 py-8 mx-auto"
+    className="flex flex-wrap items-center justify-between max-w-4xl px-4 py-8 sm:px-8 mx-auto"
   />
 );
 
