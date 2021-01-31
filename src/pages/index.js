@@ -69,7 +69,7 @@ const BlogIndex = ({ data }) => {
       />
       <Section>
         <Wrapper>
-          <Intro>Chi Le is an aspiring</Intro>
+          <Intro>Chi Le is a</Intro>
           <Span>
             <Typewriter
               options={{
